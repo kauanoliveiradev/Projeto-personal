@@ -19,8 +19,7 @@ let animando = false;
 let larguraCache = 0;
 
 function atualizarLargura() {
-  const slide = track.querySelector(".carrossel__slide");
-  larguraCache = slide.offsetWidth + GAP;
+  larguraCache = 340 + GAP;  /* mesmo valor fixo do CSS */
 }
 
 function mover(animar = true) {

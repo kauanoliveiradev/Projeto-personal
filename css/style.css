@@ -20,31 +20,33 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
 /* Página principal */
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 8%;
-  background: linear-gradient(to right, #000000, #1a0000);
+  padding: 0 10%;           /* mais respiro nas laterais */
+  background: linear-gradient(to right, #000000, #360101);
   overflow: hidden;
+  gap: 40px;        
+   align-items: flex-end;         /* espaço entre texto e foto */
 }
 
 .hero__content {
-  max-width: 700px;
+  max-width: 620px;
   z-index: 2;
+  padding-bottom: 8vh;   /* empurra o texto pra cima enquanto a foto fica embaixo */
 }
 
 .hero__title {
-  font-size: 5rem;
-  line-height: 0.95;
+  font-size: 4.5rem;        /* ligeiramente menor pra respirar */
+  line-height: 1;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--text-destaque);
-  margin-bottom: 24px;
-  text-shadow: 5px 5px 10px #2c0000;
-
+  margin-bottom: 28px;
+  text-shadow: 4px 4px 12px rgba(44, 0, 0, 0.7);
 }
 
 .hero__title .white {
@@ -52,41 +54,58 @@ body {
 }
 
 .hero__description {
-  max-width: 600px;
-  font-size: 1.3rem;
-  line-height: 1.6;
+  max-width: 520px;
+  font-size: 1.15rem;
+  line-height: 1.7;
   color: var(--subtext-cinza);
-  margin-bottom: 32px;
+  margin-bottom: 40px;      /* mais espaço antes do botão */
 }
 
-.hero__description .white{
-    color: var(--text-white);
+.hero__description .white {
+  color: var(--text-white);
 }
 
 .hero__cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;                /* espaço pro ícone de seta */
   background-color: var(--text-destaque);
   color: var(--text-white);
-  padding: 18px 32px;
+  padding: 20px 40px;       /* botão mais generoso */
   text-decoration: none;
   font-weight: 700;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  box-shadow: 5px 5px 10px #2c0000;
+  letter-spacing: 0.05em;   /* letras mais espaçadas */
+  box-shadow: 4px 4px 20px rgba(180, 0, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero__cta::after {
+  content: "→";             /* seta no botão */
+  font-size: 1.1rem;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 8px 28px rgba(180, 0, 0, 0.6);
 }
 
 .hero__img {
-  flex: 1;
+  flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .hero__img img {
   width: auto;
-  max-width: 700px;
-  max-height: 222vh;
+  max-width: 520px;
+  height: 105vh;
   object-fit: contain;
-  display: flex;
+  object-position: bottom;
+  display: block;          /* remove espaço fantasma embaixo da img */
+  vertical-align: bottom;  /* garante que cola no chão */
 }
 
 /* Seção de resultados dos alunos */
@@ -136,20 +155,20 @@ body {
   display: flex;
   gap: 24px;
   transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .carrossel__slide {
-  min-width: calc((100% - 48px) / 3);
+  width: 340px;        /* largura fixa em px, não % */
+  flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
-  flex-shrink: 0;
   background-color: #1a1a1a;
 }
 
 .carrossel__slide img {
   width: 100%;
   height: 420px;
-  object-fit: cover;
   display: block;
 }
 
@@ -168,13 +187,9 @@ body {
   z-index: 2;
 }
 
-.prev {
-  left: -20px;
-}
+.prev { left: 8px; }
 
-.next {
-  right: -20px;
-}
+.next { right: 8px; }
 
 /* Seção sobre */
 .about{
@@ -214,4 +229,14 @@ body {
 
 footer{
     background-color: #000000;
+    height: 100px;
+}
+
+.site-footer__content{
+  text-align: center;
+  padding-top: 30px; 
+}
+
+.site-footer__text .site-footer__link{
+  color: #ff0000;
 }
