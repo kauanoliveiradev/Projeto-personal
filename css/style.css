@@ -1,0 +1,217 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Variaveis de cores */
+:root {
+  --text-destaque: #cc0b0b;
+  --text-white: #f5f5f5;
+  --background-cinza: #111111;
+  --subtext-cinza: #9a9a9a;
+  --cta-red: #ff0000;
+}
+/* Corpo do site */
+body {
+    background-color: #111111;
+    color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Página principal */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  background: linear-gradient(to right, #000000, #1a0000);
+  overflow: hidden;
+}
+
+.hero__content {
+  max-width: 700px;
+  z-index: 2;
+}
+
+.hero__title {
+  font-size: 5rem;
+  line-height: 0.95;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-destaque);
+  margin-bottom: 24px;
+  text-shadow: 5px 5px 10px #2c0000;
+
+}
+
+.hero__title .white {
+  color: var(--text-white);
+}
+
+.hero__description {
+  max-width: 600px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--subtext-cinza);
+  margin-bottom: 32px;
+}
+
+.hero__description .white{
+    color: var(--text-white);
+}
+
+.hero__cta {
+  display: inline-block;
+  background-color: var(--text-destaque);
+  color: var(--text-white);
+  padding: 18px 32px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 10px #2c0000;
+}
+
+.hero__img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.hero__img img {
+  width: auto;
+  max-width: 700px;
+  max-height: 222vh;
+  object-fit: contain;
+  display: flex;
+}
+
+/* Seção de resultados dos alunos */
+.results {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+}
+
+.results__content {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.results__label {
+  color: var(--text-destaque);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.results__title {
+  color: var(--text-white);
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.results__title .text-destaque {
+  color: var(--text-destaque);
+}
+
+.results__description {
+  color: var(--subtext-cinza);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.results__carrossel {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrossel__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+
+.carrossel__slide {
+  min-width: calc((100% - 48px) / 3);
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #1a1a1a;
+}
+
+.carrossel__slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.carrossel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.85);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: -20px;
+}
+
+.next {
+  right: -20px;
+}
+
+/* Seção sobre */
+.about{
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+}
+
+/* Seção metodo */
+.method{
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+}
+
+/* Seção processo para entrar em contato */
+.process{
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+}
+
+/* Depoimento dos alunos */
+.testimonials{
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+}
+
+/* Conclusão do site e ultima CTA */
+.final-cta{
+  min-height: 100vh;
+  padding: 80px 8%;
+  background-color: #111111;
+ 
+}
+
+footer{
+    background-color: #000000;
+}
