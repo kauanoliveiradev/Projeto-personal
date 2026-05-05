@@ -15,11 +15,11 @@ slidesOriginais.slice(0, VISIVEIS).map(s => s.cloneNode(true)).forEach(c => trac
 let indiceAtual = VISIVEIS;
 let animando = false;
 
-// 2. Largura cacheada, atualizada só no resize
+
 let larguraCache = 0;
 
 function atualizarLargura() {
-  larguraCache = 340 + GAP;  /* mesmo valor fixo do CSS */
+  larguraCache = 340 + GAP;  
 }
 
 function mover(animar = true) {
