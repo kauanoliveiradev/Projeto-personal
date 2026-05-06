@@ -4,123 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bree+Serif&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-logo.png">
     <title>Lucas Alves - Personal</title>
 </head>
 <body>
-    <!-- Site -->
-    <main class="site-main">
-
-        <!-- Seção Hero -->
+    <!-- SITE -->
+    <main>
+        
+        <!-- SEÇÃO HERO -->
         <section class="hero">
-            <div class="hero__img">
-                <img src="" alt="Lucas Alves">
-            </div>
-
             <div class="hero__content">
-                <h1 class="hero__title">
-                    TRANSFORME SEU CORPO.<br>
-                    RECUPERE SUA AUTOESTIMA.
+                <h1 class="hero__title">TRANSFORME<br>
+                <span class="red">SEU CORPO.</span><br>
+                RECUPERE SUA<br>AUTOESTIMA.
                 </h1>
                 <p class="hero__description">
-                    Chega de se sentir insatisfeito com o espelho. Com
-                    acompanhamento personalizado — online ou presencial —
-                    vou te levar do ponto A ao B sem enrolação.
+                    Chega de evitar o espelho. Com
+                    <span class="white">acompanhamento personalizado</span>(online ou presencial), você muda.
                 </p>
-                <a href="https://wa.me/5521982757991" class="hero__cta">COMEÇAR MINHA TRANSFORMAÇÃO</a>
+                 
+                <a href="https://wa.me/5521982757991" class="hero__cta"><img src="assets/icons/icone-whatsapp.png" alt="icone-whatsapp">COMEÇAR MINHA TRANSFORMAÇÃO</a>
             </div>
+
+            <div class="hero__img">
+               
+                <img src="assets/img/personal-shape.png" alt="Lucas Alves">
+            </div>  
+                
         </section>
 
-        <!-- Seção Resultados -->
-        <section class="results" id="resultados">
+        <!-- SEÇÃO RESULTADOS DOS ALUNOS -->
+        <section class="results">
             <div class="results__content">
-                <span class="results__label">antes &amp; depois</span>
+                <span class="results__label"></span>
+
                 <h2 class="results__title">
-                    RESULTADOS REAIS.<br>
-                    TRANSFORMAÇÕES REAIS.
+                TRANSFORMAÇÕES <span class="text-destaque">REAIS.</span><br>
+                RESULTADOS QUE FALAM POR SI.
                 </h2>
+
                 <p class="results__description">
-                    Cada corpo é único. Cada conquista é pessoal. Veja o que acontece
-                    quando comprometimento encontra o método certo.
+                Método certo, consistência e resultados visíveis.
                 </p>
             </div>
+
+            <div class="results__carrossel">
+                <button class="carrossel__btn prev">‹</button>
+
+            <div class="carrossel__track" id="carrosselTrack">
+                <div class="carrossel__slide"><img src="assets/img/foto-aluna-01.jpeg" alt="foto-aluno-01"></div>
+                <div class="carrossel__slide"><img src="assets/img/foto-aluno-02.jpeg" alt="foto-aluno-02"></div>
+                <div class="carrossel__slide"><img src="assets/img/foto-aluna-03.jpeg" alt="foto-aluno-03"></div>
+                <div class="carrossel__slide"><img src="assets/img/foto-aluna-04.jpeg" alt="foto-aluna-04"></div>
+                <div class="carrossel__slide"><img src="assets/img/foto-aluno-05.jpeg" alt="foto-aluno-05"></div>
+                <div class="carrossel__slide"><img src="assets/img/foto-aluna-06.jpeg" alt="foto-aluno-06"></div>
+            </div>
+
+                <button class="carrossel__btn next">›</button>
+            </div>
+            <div class="carrossel__dots"></div>
         </section>
 
-        <!-- Seção Sobre -->
+        <!-- SEÇÃO SOBRE O PERSONAL -->
         <section class="about" id="sobre">
-            
+
             <div class="about__image">
-                <img src="img/lucas.jpg" alt="Lucas Alves com certificado" />
+                <img src="assets/img/personal-certificado.jpeg" alt="Lucas Alves com certificado" />
+                <div class="about__image-cred"><span>CREF 067837-G/RJ</span></div>
             </div>
             
             <div class="about__card">
-
-                <div class="about__header">
-                    <span class="about__label">sobre mim</span>
-                    <h2 class="about__title">QUEM VAI TE GUIAR NESSA MUDANÇA</h2>
-                </div>
-
+                   
+                    <h2 class="about__title">LUCAS ALVES</h2>
+    
                 <div class="about__body">
                     <p class="about__text">
                         Sou Lucas Alves, personal especializado em
-                        <strong>emagrecimento e ganho de massa muscular</strong>,
-                        com foco no que realmente importa: sua autoestima.
+                        <strong>emagrecimento e ganho de massa muscular</strong>.
+                        com foco em um ponto central: sua autoestima.
                     </p>
                     <p class="about__text">
-                        Entendo que transformar o corpo vai muito além de treinar.
-                        É sobre <strong>construir disciplina, autoconhecimento e confiança</strong>
-                        — e é isso que eu trago para cada aluno, seja no presencial ou no online.
+                        Transformar o corpo não é só sobre treino.
+                        É sobre <strong>construir disciplina, entender seu processo e construir confiança</strong> de forma consistente
+                        e é isso que eu trago para os meus alunos, no presencial ou no online.
                     </p>
                     <p class="about__text">
                         Atendo de forma <strong>próxima e personalizada</strong>,
                         adaptando o treino e a estratégia à sua rotina real,
                         sem fórmulas genéricas.
                     </p>
+                    <a href="https://wa.me/5521982757991" class="about__cta"><img src="assets/icons/icone-whatsapp.png" alt="icone-whatsapp">FALAR COMIGO</a>
                 </div>
-
             </div>
         </section>
-        <!-- Seção método -->
+
+        <!-- SEÇÃO MÉTODO -->
         <section class="method" id="metodo">
 
             <div class="method__content">
 
-                    <h2 class="method__title"> SEU CORPO COMEÇA AQUI </h2>
-                    <p class="method__text">Cada aluno recebe um Adapatado. Dentro da sua rotina. Sem perder tempo.
+                    <h2 class="method__title">  O QUE VOCÊ GANHA AO ENTRAR NO <span class="text-destaque">TIME</span></h2>
+                    <p class="method__text">Treino feito pra você. Resultado que aparece.
                     </p>
 
                 <div class="method__grid">
-                        <article class="method__card">
-                        <span class="method__icon">🔥</span>
+                    <article class="method__card">
+                        <img src="assets/icons/icone-fogo.png" alt="icone-fogo">
                         <h3 class="method__card-title">EMAGRECIMENTO ACELERADO</h3>
-                        <p class="method__card-text">Hipertrofia com periodização inteligente, sem lesões e com evolução visível mês a mês.</p>
+                        <p class="method__card-text">Perca gordura sem viver de dieta. Resultado visível sem efeito sanfona.</p>
                     </article>
 
                     <article class="method__card">
-                        <span class="method__icon">💪</span>
+                        <img src="assets/icons/icone-musculo.png" alt="icone-musculo">
                         <h3 class="method__card-title">GANHO DE MASSA MUSCULAR ACELERADO</h3>
-                        <p class="method__card-text">Hipertrofia com periodização inteligence</p>
+                        <p class="method__card-text">Ganhe massa sem se destruir no processo. Evolução que dá pra ver no espelho mês a mês.</p>
                     </article>
 
                     <article class="method__card">
-                        <span class="method__icon">🔥</span>
-                        <PLANO class="method__card-title">PLANO 100% PERSONALIZADO</h3>
-                        <p class="method__card-text"> Treino e estratégia criados do zero para os seus objetivos, horários e nível atual..</p>
+                        <img src="assets/icons/icone-halter.png" alt="icone-halter">
+                        <h3 class="method__card-title">PLANO 100% PERSONALIZADO</h3>
+                        <p class="method__card-text"> Nada de treino genérico. Tudo feito pra sua rotina até nos dias que você quer desistir.</p>
                     </article>
 
                     <article class="method__card">
-                        <span class="method__icon">🔥</span>
+                        <img src="assets/icons/icone-celular.png" alt="icone-celular">
                         <h3 class="method__card-title">ACOMPANHAMENTO ONLINE</h3>
                         <p class="method__card-text">Suporte diário, correção de execução por vídeo e ajustes em tempo real onde você estiver.</p>
                     </article>
 
                     <article class="method__card">
-                        <span class="method__icon">🔥</span>
+                        <img src="assets/icons/icone-relogio.png" alt="icone-relogio">
                         <h3 class="method__card-title">TREINO NA SUA ROTINA</h3>
                         <p class="method__card-text"> Adaptado à sua agenda real. Sem desculpas para não conseguir encaixar.</p>
                     </article>
 
                     <article class="method__card">
-                        <span class="method__icon">🔥</span>
+                        <img src="assets/icons/icone-espelho.png" alt="icone-espelho">
                         <h3 class="method__card-title">AUTOESTIMA TRANSFORMADA</h3>
                         <p class="method__card-text"> O maior resultado não é estético: é você olhar no espelho e se sentir bem de verdade.</p>
                     </article>
@@ -129,98 +151,89 @@
             </div>
         </section>
 
-        <!-- Seção como funciona -->
-        <section class="process" id="como funciona">
-            <div class="process__content">
-                <h2 class="process__title">3 PASSOS PARA MUDAR SUA VIDA</h2>
-                <p class="process__text">Sem complicação, o processo é simples - a transformação é real.</p>
-
-                <div class="process__fluxo">
-                    <article class="process__step">
-                        <span class="process__number">01</span>
-                        <div class="process__info">
-                            <h3 class="process__step-title">Clique no botão abaixo</h3>
-                            <p class="process__step-text">
-                            Dê o primeiro passo. Nada de formulário complicado.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="process__step">
-                        <span class="process__number">02</span>
-                        <div class="process__info">
-                            <h3 class="process__step-title">Fale comigo no WhatsApp</h3>
-                            <p class="process__step-text">
-                            Conversamos sobre seus objetivos e rotina.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="process__step">
-                        <span class="process__number">03</span>
-                        <div class="process__info">
-                            <h3 class="process__step-title">Receba seu plano personalizado</h3>
-                            <p class="process__step-text">
-                            Em pouco tempo você já começa com um plano feito para você.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="process__card">
-                        <h3 class="process__card-title">AVALIAÇÃO GRATUITA PARA NOVOS ALUNOS</h3>
-                        <p class="process__card-text">Antes de qualquer investimento, você terá uma conversa honesta comigo sobre oq é possivel para o seu corpo</p>
-                        <ul>
-                            <li>Análise completa dos seus objetivos e limitações</li>
-                            <li>Estratégia inicial personalizada para o seu corpo</li>
-                            <li>Esclarecimento sobre o treino online ou presencial</li>
-                            <li>Sem enrolação</li>
-                        </ul>
-                        <a href="http:////wa.me/5521982757991" class="process__card-link">QUERO MINHA AVALIAÇÃO GRATUITA</a>
-
-                    </article>
-            </div>
-            
-        </section>
-
-        <section class="testimonials" id="depoimentos">
+        <!-- SEÇÃO DEPOIMENTOS DOS ALUNOS -->
+        <section class="testimonials">
             <div class="testimonials__content">
-                <h2 class="testimonial__title">QUEM DECIDIU MUDAR DIZ ISSO</h2>
-                <p class="testimonial__text">resultados reais, com historias parecidas com a sua</p>
+                <h2 class="testimonials__title">ELES JÁ MUDARAM. E <span class="text-destaque">VOCÊ?</span></h2>
+                <p class="testimonials__text">Histórias que podem ser a sua (se você agir).</p>
             </div>
-            <div class="testimonials__card">
-                <article class="testmonials__card-img">
-                    <img src="" alt="comentarios">
+
+            <div class="testimonials__carrossel-wrapper">
+                <button class="prev--testimonials">‹</button>
+
+            <div class="testimonials__track" id="testimonialsTrack">
+                <article class="testimonials__card-img">
+                    <p class="card__label">indicação + satisfação.</p>
+                    <img src="assets/img/comentario-01.jpeg" alt="comentarios">
                 </article>
 
+                <article class="testimonials__card-img">
+                    <p class="card__label">Nem ela acreditava que ia dar certo</p>
+                    <img src="assets/img/comentario-02.jpeg" alt="comentarios">
+                </article>
+
+                <article class="testimonials__card-img">
+                    <p class="card__label">Persistencia que deu certo</p>
+                    <img src="assets/img/comentario-03.jpeg" alt="comentarios">
+                </article>
+
+                <article class="testimonials__card-img">
+                    <p class="card__label">Motivação que vira hábito</p>
+                    <img src="assets/img/comentario-04.jpeg" alt="comentarios">
+                </article>
+
+                <article class="testimonials__card-img">
+                    <p class="card__label">Constância na prática</p>
+                    <img src="assets/img/comentario-05.jpeg" alt="comentarios">
+                </article>
             </div>
+
+                <button class="next--testimonials">›</button>
+            </div>
+
+            <div class="testimonials__dots"></div>
         </section>
 
+        <!-- SEÇÃO CTA FINAL -->
         <section class="final-cta" id="final-cta">
 
             <div class="final-cta__content">
-               <p class="final-cta__text-topo">agora chegou a sua vez</p>
-               <h2 class="final-cta__title">PARE DE ADIAR.<br>COMECE HOJE.</h2>
-                <p class="final-cta__text">Cada dia que passa é um dia a mais de insatisfação. <strong>Você merece se olhar no espelho e gostar do que vê.</strong>Isso está a um clique de distância</p>
-                <a href="http://wa.me/5521982757991" class="final-cta__cta">QUERO TRANSFORMAR MEU CORPO AGORA</a>
-                <p class="final-cta__text-final">Avaliação 100% gratuita. Respostas em até 2h</p>
+               <p class="final-cta__text-topo"> <strong>SUA VEZ COMEÇA AGORA</strong> </p>
+               <h2 class="final-cta__title">SEU CORPO NÃO MUDA SOZINHO.
+                OU VOCÊ AGE, OU CONTINUA <span class="text-destaque">IGUAL.</span> </h2>
+                <p class="final-cta__text"> Cada dia parado mantém o mesmo corpo.
+                Você começa. <strong>O resultado aparece.</strong><p>
+                <a href="http://wa.me/5521982757991" class="final-cta__cta"><img src="assets/icons/icone-whatsapp.png" alt="icone-whatsapp">QUERO RESULTADO AGORA</a>
+                <p class="final-cta__text-final">Avaliação gratuita • Resposta rápida no WhatsApp</p>
             </div>
 
         </section>
     </main>
 
+    <!-- SEÇÃO FOOTER -->
     <footer class="site-footer">
         <div class="site-footer__content">
-            <p class="site-footer__text">
-                © 2026 Personal Lucas Alves. Todos os direitos reservados.
-            </p>
 
-            <p class="site-footer__text">
+            <img src="assets/img/logo.png" alt="logo Lucas Alves">
+
+            <div class="site-footer__texts">
+                <p>
+                © 2026 Personal Lucas Alves CREF: 067837-G/RJ. Todos os direitos reservados. 
+                </p>
+
+                <p>
                 Rio de Janeiro · Atendimento presencial e online ·
                 <a href="https://wa.me/5521982757991" class="site-footer__link">WhatsApp</a>
-            </p>
+                </p>
+            </div>
+            
         </div>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <a href="https://wa.me/5521982757991" target="_blank" class="whatsapp-btn">
+            <img src="/assets/icons/icone-whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
