@@ -13,7 +13,7 @@
 <body>
     <!-- SITE -->
     <main>
-    
+        
         <!-- SEÇÃO HERO -->
         <section class="hero">
             <div class="hero__content">
@@ -65,6 +65,7 @@
 
                 <button class="carrossel__btn next">›</button>
             </div>
+            <div class="carrossel__dots"></div>
         </section>
 
         <!-- SEÇÃO SOBRE O PERSONAL -->
@@ -153,37 +154,44 @@
         <!-- SEÇÃO DEPOIMENTOS DOS ALUNOS -->
         <section class="testimonials">
             <div class="testimonials__content">
-                <h2 class="testimonial__title">ELES JÁ MUDARAM. E <span class="text-destaque">VOCÊ?</span></h2>
-                <p class="testimonial__text">Histórias que podem ser a sua (se você agir).</p>
+                <h2 class="testimonials__title">ELES JÁ MUDARAM. E <span class="text-destaque">VOCÊ?</span></h2>
+                <p class="testimonials__text">Histórias que podem ser a sua (se você agir).</p>
             </div>
 
-            <div class="testimonials__card">
-                <article class="testmonials__card-img">
-                    <p class="card__label"> indicação + satisfação.</p>
+            <div class="testimonials__carrossel-wrapper">
+                <button class="prev--testimonials">‹</button>
+
+            <div class="testimonials__track" id="testimonialsTrack">
+                <article class="testimonials__card-img">
+                    <p class="card__label">indicação + satisfação.</p>
                     <img src="assets/img/comentario-01.jpeg" alt="comentarios">
                 </article>
-           
-                <article class="testmonials__card-img">
-                        <p class="card__label"> Nem ela acreditava que ia dar certo</p>
+
+                <article class="testimonials__card-img">
+                    <p class="card__label">Nem ela acreditava que ia dar certo</p>
                     <img src="assets/img/comentario-02.jpeg" alt="comentarios">
                 </article>
 
-                <article class="testmonials__card-img">
-                    <p class="card__label"> Persistencia que deu certo</p>
+                <article class="testimonials__card-img">
+                    <p class="card__label">Persistencia que deu certo</p>
                     <img src="assets/img/comentario-03.jpeg" alt="comentarios">
                 </article>
 
-                <article class="testmonials__card-img">
-                    <p class="card__label"> Motivação que vira hábito</p>
+                <article class="testimonials__card-img">
+                    <p class="card__label">Motivação que vira hábito</p>
                     <img src="assets/img/comentario-04.jpeg" alt="comentarios">
                 </article>
 
-                <article class="testmonials__card-img">
-                    <p class="card__label"> Constância na prática</p>
+                <article class="testimonials__card-img">
+                    <p class="card__label">Constância na prática</p>
                     <img src="assets/img/comentario-05.jpeg" alt="comentarios">
                 </article>
-
             </div>
+
+                <button class="next--testimonials">›</button>
+            </div>
+
+            <div class="testimonials__dots"></div>
         </section>
 
         <!-- SEÇÃO CTA FINAL -->
