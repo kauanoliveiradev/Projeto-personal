@@ -1,12 +1,17 @@
+/* =========================================================
+   CARROSSEL
+   ========================================================= */
+
 function iniciarCarrossel(config) {
+  const trackClip = document.getElementById(config.trackClipId);
   const track = document.getElementById(config.trackId);
   const prevBtn = document.querySelector(config.prevBtn);
   const nextBtn = document.querySelector(config.nextBtn);
   const dotsContainer = document.querySelector(config.dotsContainer);
 
-  if (!track) return;
+  if (!track || !trackClip) return;
 
-  const slidesOriginais = Array.from(track.children).map(slide => slide.cloneNode(true));
+  const slidesOriginais = Array.from(track.children).map(s => s.cloneNode(true));
   const total = slidesOriginais.length;
 
   let indiceAtual = config.visiveis;
@@ -14,46 +19,63 @@ function iniciarCarrossel(config) {
   let modoAtual = null;
   let larguraSlide = 0;
 
-  function isMobile() {
-    return window.innerWidth <= 768;
+  const isMobile = () => window.innerWidth <= 1024;
+
+  function criarDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = "";
+
+    slidesOriginais.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add(config.dotClass);
+      if (index === 0) dot.classList.add("ativo");
+
+      dot.addEventListener("click", () => {
+        const slides = track.querySelectorAll(config.slideSelector);
+        slides[index]?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    // IntersectionObserver — detecta automaticamente qual slide está visível
+    const slides = track.querySelectorAll(config.slideSelector);
+    const dots = dotsContainer.querySelectorAll(`.${config.dotClass}`);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(slides).indexOf(entry.target);
+          dots.forEach((dot, i) => dot.classList.toggle("ativo", i === index));
+        }
+      });
+    }, {
+      root: trackClip,
+      threshold: 0.5
+    });
+
+    slides.forEach(slide => observer.observe(slide));
   }
 
   function montarSlides() {
     const mobile = isMobile();
-
     if (modoAtual === mobile) return;
-
     modoAtual = mobile;
+
     track.innerHTML = "";
 
     if (mobile) {
-      slidesOriginais.forEach(slide => {
-        track.appendChild(slide.cloneNode(true));
-      });
-
+      slidesOriginais.forEach(s => track.appendChild(s.cloneNode(true)));
       track.style.transform = "none";
       track.style.transition = "none";
-
       criarDots();
-      atualizarDots();
       return;
     }
 
-    const clonesInicio = slidesOriginais
-      .slice(-config.visiveis)
-      .map(slide => slide.cloneNode(true));
-
-    const clonesFim = slidesOriginais
-      .slice(0, config.visiveis)
-      .map(slide => slide.cloneNode(true));
-
-    clonesInicio.forEach(slide => track.appendChild(slide));
-
-    slidesOriginais.forEach(slide => {
-      track.appendChild(slide.cloneNode(true));
-    });
-
-    clonesFim.forEach(slide => track.appendChild(slide));
+    // Desktop: clona slides no início e no fim para loop infinito
+    slidesOriginais.slice(-config.visiveis).forEach(s => track.appendChild(s.cloneNode(true)));
+    slidesOriginais.forEach(s => track.appendChild(s.cloneNode(true)));
+    slidesOriginais.slice(0, config.visiveis).forEach(s => track.appendChild(s.cloneNode(true)));
 
     indiceAtual = config.visiveis;
     atualizarLargura();
@@ -63,76 +85,20 @@ function iniciarCarrossel(config) {
   function atualizarLargura() {
     const primeiroSlide = track.querySelector(config.slideSelector);
     if (!primeiroSlide) return;
-
     const style = window.getComputedStyle(primeiroSlide);
-    const marginLeft = parseFloat(style.marginLeft) || 0;
-    const marginRight = parseFloat(style.marginRight) || 0;
-
-    larguraSlide = primeiroSlide.offsetWidth + marginLeft + marginRight;
+    larguraSlide = primeiroSlide.offsetWidth
+      + (parseFloat(style.marginLeft) || 0)
+      + (parseFloat(style.marginRight) || 0);
   }
 
   function mover(animar = true) {
     if (isMobile()) return;
-
     track.style.transition = animar ? "transform 0.4s ease" : "none";
     track.style.transform = `translateX(-${indiceAtual * larguraSlide}px)`;
   }
 
-  function criarDots() {
-    if (!dotsContainer) return;
-
-    dotsContainer.innerHTML = "";
-
-    slidesOriginais.forEach((_, index) => {
-      const dot = document.createElement("div");
-      dot.classList.add(config.dotClass);
-
-      if (index === 0) {
-        dot.classList.add("ativo");
-      }
-
-      dot.addEventListener("click", () => {
-        const slides = track.querySelectorAll(config.slideSelector);
-
-        slides[index].scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest"
-        });
-      });
-
-      dotsContainer.appendChild(dot);
-    });
-  }
-
-  function atualizarDots() {
-    if (!isMobile() || !dotsContainer) return;
-
-    const slides = Array.from(track.querySelectorAll(config.slideSelector));
-    const dots = dotsContainer.querySelectorAll(`.${config.dotClass}`);
-
-    if (!slides.length || !dots.length) return;
-
-    let indiceMaisProximo = 0;
-    let menorDistancia = Infinity;
-
-    slides.forEach((slide, index) => {
-      const distancia = Math.abs(slide.offsetLeft - track.scrollLeft);
-
-      if (distancia < menorDistancia) {
-        menorDistancia = distancia;
-        indiceMaisProximo = index;
-      }
-    });
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("ativo", index === indiceMaisProximo);
-    });
-  }
-
   function avancar() {
     if (animando || isMobile()) return;
-
     animando = true;
     indiceAtual++;
     mover();
@@ -140,77 +106,77 @@ function iniciarCarrossel(config) {
 
   function voltar() {
     if (animando || isMobile()) return;
-
     animando = true;
     indiceAtual--;
     mover();
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", avancar);
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", voltar);
-  }
-
-  track.addEventListener("scroll", atualizarDots);
+  nextBtn?.addEventListener("click", avancar);
+  prevBtn?.addEventListener("click", voltar);
 
   track.addEventListener("transitionend", () => {
     if (isMobile()) return;
-
     if (indiceAtual >= total + config.visiveis) {
       indiceAtual = config.visiveis;
       mover(false);
-    }
-
-    if (indiceAtual < config.visiveis) {
+    } else if (indiceAtual < config.visiveis) {
       indiceAtual = total;
       mover(false);
     }
-
     animando = false;
   });
 
   let resizeTimer;
-
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-
     resizeTimer = setTimeout(() => {
+      modoAtual = null;
       montarSlides();
       atualizarLargura();
-
-      if (!isMobile()) {
-        mover(false);
-      } else {
-        atualizarDots();
-      }
+      if (!isMobile()) mover(false);
     }, 150);
   });
 
   montarSlides();
 }
 
+/* =========================================================
+   INICIALIZAÇÃO DOS CARROSSEIS
+   ========================================================= */
+
 iniciarCarrossel({
+  trackClipId: "carrosselClip",
   trackId: "carrosselTrack",
-  slideSelector: ".carrossel__slide",
-  prevBtn: ".prev",
-  nextBtn: ".next",
-  dotsContainer: ".carrossel__dots",
-  dotClass: "carrossel__dot",
-  visiveis: 3
+  slideSelector: ".results__slide",
+  prevBtn: ".results__btn--prev",
+  nextBtn: ".results__btn--next",
+  dotsContainer: ".results__dots",
+  dotClass: "results__dot",
+  visiveis: 3,
 });
 
 iniciarCarrossel({
+  trackClipId: "testimonialsClip",
   trackId: "testimonialsTrack",
-  slideSelector: ".testimonials__card-img",
-  prevBtn: ".prev--testimonials",
-  nextBtn: ".next--testimonials",
+  slideSelector: ".testimonials__slide",
+  prevBtn: ".testimonials__btn--prev",
+  nextBtn: ".testimonials__btn--next",
   dotsContainer: ".testimonials__dots",
   dotClass: "testimonials__dot",
-  visiveis: 3
+  visiveis: 3,
 });
 
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
 
+document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
