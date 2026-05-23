@@ -1,6 +1,4 @@
-/* =========================================================
-   CARROSSEL
-   ========================================================= */
+/*-----CARROSSEL-----*/
 
 function iniciarCarrossel(config) {
   const trackClip = document.getElementById(config.trackClipId);
@@ -140,9 +138,7 @@ function iniciarCarrossel(config) {
   montarSlides();
 }
 
-/* =========================================================
-   INICIALIZAÇÃO DOS CARROSSEIS
-   ========================================================= */
+/*-----INICIALIZAÇÃO DOS CARROSSEIS-----*/
 
 iniciarCarrossel({
   trackClipId: "carrosselClip",
@@ -166,9 +162,7 @@ iniciarCarrossel({
   visiveis: 3,
 });
 
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+/*-----SCROLL REVEAL-----*/
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

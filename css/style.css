@@ -102,9 +102,9 @@ img {
       rgba(0, 0, 0, 0.45) 55%,
       rgba(0, 0, 0, 0) 75%
     ),
-    url(/assets/img/personal.png), 
+    url(/assets/img/personal.avif), 
     linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.308)),
-    url(/assets/img/background-academia.png); 
+    url(/assets/img/background-academia.avif); 
   background-size: cover, auto 100%, cover, cover; 
   background-position: center top, center top, center, center;
   background-repeat: no-repeat;
@@ -155,7 +155,7 @@ img {
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.178)),
-    url(/assets/img/background-logo.png);
+    url(/assets/img/background-logo.avif);
   min-height: 100svh;
 }
 
@@ -317,7 +317,7 @@ img {
   flex-direction: column; 
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.178)),
-    url(/assets/img/background-logo.png);
+    url(/assets/img/background-logo.avif);
   justify-content: center;
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   align-items: center;
@@ -434,7 +434,7 @@ img {
   min-height: 100svh;
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.178)),
-    url(/assets/img/background-logo.png);
+    url(/assets/img/background-logo.avif);
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
 }
 
@@ -498,7 +498,7 @@ img {
 .testimonials {
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.178)),
-    url(/assets/img/background-logo.png);
+    url(/assets/img/background-logo.avif);
   text-align: center;
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
 }
@@ -646,7 +646,7 @@ img {
   min-height: 100svh;
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.856)),
-    url(/assets/img/background-treino.png);
+    url(/assets/img/background-treino.avif);
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   background-size: auto, cover;
   display: flex; 
