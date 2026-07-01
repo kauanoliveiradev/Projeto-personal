@@ -9,6 +9,8 @@ Landing page desenvolvida para um personal trainer, com foco em conversão de vi
 O objetivo era criar uma página que apresentasse o trabalho do personal trainer Lucas Alves (CREF 067837-G/RJ), destacando resultados de alunos e depoimentos, com chamadas diretas para contato via WhatsApp.
  
 O projeto começou com um protótipo no Figma, validado com o cliente, e evoluiu ao longo do desenvolvimento conforme feedbacks e novas necessidades foram surgindo.
+
+🎨 **Link:** [Protótipo (Figma)](https://www.figma.com/design/cqVCfa6NKoXc0vzXaq1Y1T/Sem-título?node-id=0-1&t=gDXiTZaZjmrrthss-1)
  
 ## ✨ Funcionalidades
  
