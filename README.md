@@ -43,7 +43,7 @@ O projeto começou com um protótipo no Figma, validado com o cliente, e evoluiu
  
 ## 👤 Autor
  
-**Kauan Nascimento**
+**Kauan Oliveira**
 Full Stack Developer em formação | ADS - UNISUAM
  
 - GitHub: [@kauanoliveiradev](https://github.com/kauanoliveiradev)
