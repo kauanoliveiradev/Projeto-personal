@@ -1,4 +1,4 @@
-/*-----CARROSSEL-----*/
+/*-----CAROUSEL-----*/
 
 function iniciarCarrossel(config) {
   const trackClip = document.getElementById(config.trackClipId);
@@ -63,6 +63,7 @@ function iniciarCarrossel(config) {
     track.innerHTML = "";
 
     if (mobile) {
+      // No mobile o scroll é nativo (scroll-snap), sem necessidade de clones ou transform via JS.
       slidesOriginais.forEach(s => track.appendChild(s.cloneNode(true)));
       track.style.transform = "none";
       track.style.transition = "none";
@@ -70,7 +71,11 @@ function iniciarCarrossel(config) {
       return;
     }
 
-    // Desktop: clona slides no início e no fim para loop infinito
+    // Desktop: para simular um loop infinito com translateX, os slides são clonados:
+    // os últimos slides visíveis são inseridos no INÍCIO da trilha
+    // os primeiros slides visíveis são inseridos no FIM da trilha
+    // Assim, quando o usuário passa do fim, na verdade está visualizando
+    // uma cópia do início (e vice-versa), resetando o índice sem transição.
     slidesOriginais.slice(-config.visiveis).forEach(s => track.appendChild(s.cloneNode(true)));
     slidesOriginais.forEach(s => track.appendChild(s.cloneNode(true)));
     slidesOriginais.slice(0, config.visiveis).forEach(s => track.appendChild(s.cloneNode(true)));
@@ -112,6 +117,9 @@ function iniciarCarrossel(config) {
   nextBtn?.addEventListener("click", avancar);
   prevBtn?.addEventListener("click", voltar);
 
+  // Quando a animação termina, verifica se o carrossel parou em uma área clonada.
+  // Se sim, a posição é resetada (sem transição) para a posição real correspondente,
+  // criando a ilusão de continuidade para o usuário.
   track.addEventListener("transitionend", () => {
     if (isMobile()) return;
     if (indiceAtual >= total + config.visiveis) {

@@ -49,7 +49,7 @@ img {
   height: auto; 
 }
 
-/*-----BOTÕES CTA----- */
+/*-----BUTTONS CTA----- */
 .hero__cta,
 .about__cta,
 .final-cta__cta {
@@ -86,7 +86,7 @@ img {
   transform: translateY(-2px);
 }
 
-/*-----HERO-----*/
+/*----- SECTION HERO-----*/
 .hero {
   display: flex;
   flex-direction: column;
@@ -190,7 +190,7 @@ img {
   color: var(--subtext-cinza); 
 }
 
-/*-----CARROSSEL RESULTADOS-----*/
+/*-----CAROUSEL RESULTS-----*/
 .results__carrossel {
   position: relative;
   margin: 0 auto;
@@ -310,7 +310,7 @@ img {
   background-color: var(--text-destaque); 
 }
 
-/*-----SEÇÃO SOBRE-----*/
+/*-----SECTION ABOUT-----*/
 .about {
   display: flex;
   min-height: 100svh;
@@ -523,7 +523,7 @@ img {
   margin-top: 8px; 
 }
 
-/*-----CARROSSEL TESTIMONIALS-----*/
+/*-----CAROUSEL TESTIMONIALS-----*/
 .testimonials__carrossel {
   position: relative;
   margin: 0 auto;
@@ -737,7 +737,7 @@ footer {
   color: #ff0000; 
 }
 
-/*-----WHATSAPP FIXO----- */
+/*-----WHATSAPP FIXED----- */
 .whatsapp-btn {
   position: fixed; 
   right: clamp(16px, 2vw, 24px); 
